@@ -21,7 +21,7 @@ const Chapters: React.FC<Props> = ({ userName }) => {
 
   // eslint-disable-next-line max-len
   const chapterOptions: JSX.Element[] = testChoices.map((choice: Land, i: number) => (
-    <Link to={choice.title.toLowerCase()} key={i}>
+    <Link to={`chapters/${choice.title.toLowerCase()}`} key={i}>
       <li>
         {choice.title}
       </li>

@@ -27,6 +27,12 @@ const App: React.FC = () => {
               <Chapters userName={userName} />
             }
           />
+          <Route
+            path="/chapters/:locale"
+            render={() =>
+              <Chapters userName={userName} />
+            }
+          />
         </Switch>
       </Router>
     </div>
