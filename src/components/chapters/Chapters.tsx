@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styles from './Chapters.module.css';
 
@@ -13,14 +14,18 @@ interface Land {
 const Chapters: React.FC<Props> = ({ userName }) => {
 
   const testChoices: Land[] = [
-    { title: 'one' },
-    { title: 'two' },
-    { title: 'three' },
+    { title: 'Forest' },
+    { title: 'Mountains' },
+    { title: 'Swamp' }
   ];
 
   // eslint-disable-next-line max-len
   const chapterOptions: JSX.Element[] = testChoices.map((choice: Land, i: number) => (
-    <li key={i}>{choice.title}</li>
+    <Link to={choice.title.toLowerCase()} key={i}>
+      <li>
+        {choice.title}
+      </li>
+    </Link>
   ));
 
   return (
