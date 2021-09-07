@@ -3,6 +3,7 @@
   margin: 5vw;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .Prologue h1 {
@@ -14,4 +15,8 @@
 
 .Prologue form {
   margin: 5vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2vw;
 }
