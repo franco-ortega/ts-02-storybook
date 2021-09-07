@@ -5,7 +5,7 @@ import Chapters from './Chapters';
 describe('tests for Chapters component', () => {
 
   test('renders Chapters component', () => {
-    render(<Chapters />);
+    render(<Chapters userName="Franco" />);
 
     const element = screen.getByText('Chapters');
 
