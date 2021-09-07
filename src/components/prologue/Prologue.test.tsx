@@ -4,7 +4,7 @@ import Prologue from './Prologue';
 
 describe('tests for Prologue component', () => {
   test('renders Prologue component', () => {
-    render(<Prologue />);
+    render(<Prologue setUserName={() => {}}/>);
 
     const element = screen.getByText('Prologue');
 
@@ -12,7 +12,7 @@ describe('tests for Prologue component', () => {
   });
 
   test('input is displayed', () => {
-    render(<Prologue />);
+    render(<Prologue setUserName={() => {}} />);
 
     const input = screen.getByRole('textbox');
 
@@ -20,7 +20,7 @@ describe('tests for Prologue component', () => {
   });
 
   test('button is displayed', () => {
-    render(<Prologue />);
+    render(<Prologue setUserName={() => {}} />);
 
     const button = screen.getByRole('button');
 
