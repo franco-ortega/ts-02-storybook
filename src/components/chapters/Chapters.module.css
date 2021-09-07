@@ -22,10 +22,20 @@
   padding: 0;
 }
 
-.Chapters ul li {
+.Chapters li {
   list-style: none;
+  background: hsla(170, 80%, 45%, .9);
   border: thin solid black;
+  border-radius: 2vw;
   width: 30vw;
   padding: 10vw 0vw;
   text-align: center;
+  transition: all .5s;
+}
+
+.Chapters li:hover {
+  background: hsla(170, 80%, 75%, .9);
+  border-color: gray;
+  transform: scale(1.02);
+  cursor: pointer;
 }
