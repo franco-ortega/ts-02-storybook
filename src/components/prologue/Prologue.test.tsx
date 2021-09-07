@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import Prologue from './Prologue';
 
 describe('tests for Prologue component', () => {
-  test('renders learn react link', () => {
+  test('renders Prologue component', () => {
     render(<Prologue />);
 
     const element = screen.getByText('Prologue');
@@ -14,11 +14,10 @@ describe('tests for Prologue component', () => {
   test('input is displayed', () => {
     render(<Prologue />);
 
-    const input = screen.getByRole('input');
+    const input = screen.getByRole('textbox');
 
     expect(input).toBeInTheDocument();
   });
-  
 
   test('button is displayed', () => {
     render(<Prologue />);
