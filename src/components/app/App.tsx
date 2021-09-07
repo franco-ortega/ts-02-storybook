@@ -16,7 +16,7 @@ const App: React.FC = () => {
       <Router>
         <Switch>
           <Route
-            exact path="/prologue"
+            exact path="/"
             render={() =>
               <Prologue setUserName={setUserName} />
             }
