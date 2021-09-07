@@ -4,11 +4,11 @@ import {
   Route,
   Switch
 } from 'react-router-dom';
+import Chapters from '../chapters/Chapters';
 import Prologue from '../prologue/Prologue';
 
 const App: React.FC = () => {
   const [userName, setUserName] = useState<string>('test');
-  console.log(userName);
 
   return (
     <div data-testid="app">
@@ -19,6 +19,12 @@ const App: React.FC = () => {
             exact path="/prologue"
             render={() =>
               <Prologue setUserName={setUserName} />
+            }
+          />
+          <Route
+            exact path="/chapters"
+            render={() =>
+              <Chapters userName={userName} />
             }
           />
         </Switch>

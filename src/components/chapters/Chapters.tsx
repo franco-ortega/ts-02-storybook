@@ -8,7 +8,10 @@ interface Props {
 const Chapters: React.FC<Props> = ({ userName }) => {
   return (
     <section>
-      Hello, {userName}. This is where you create your story.
+      <h1>Chapters</h1>
+      <p>
+        Hello, {userName}. This is where you create your story.
+      </p>
     </section>
   );
 };
