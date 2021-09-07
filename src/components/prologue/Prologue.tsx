@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useHistory } from 'react-router';
+import styles from './Prologue.module.css';
 
 interface Props {
   setUserName: React.Dispatch<React.SetStateAction<string>>;
@@ -17,9 +18,13 @@ const Prologue: React.FC<Props> = ({ setUserName }) => {
   };
 
   return (
-    <section>
+    <section className={styles.Prologue}>
       <h1>Prologue</h1>
-      <p>Intro and Instructions</p>
+      <p>
+        Welcome to this storybook world. When you submit your name below,
+        you will be able to visit different lands to compose your very own
+        story.
+      </p>
       <form onSubmit={onNameSubmit}>
         <label htmlFor="user-name">
           <input
