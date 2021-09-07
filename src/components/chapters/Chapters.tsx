@@ -6,13 +6,21 @@ interface Props {
   userName: string
 }
 
+interface Land {
+  title: string
+}
+
 const Chapters: React.FC<Props> = ({ userName }) => {
 
-  const testChoices: string[] = ['one', 'two', 'three', 'four', 'five', 'six'];
+  const testChoices: Land[] = [
+    { title: 'one' },
+    { title: 'two' },
+    { title: 'three' },
+  ];
 
   // eslint-disable-next-line max-len
-  const chapterOptions: JSX.Element[] = testChoices.map((choice: string, i: number) => (
-    <li key={i}>{choice}</li>
+  const chapterOptions: JSX.Element[] = testChoices.map((choice: Land, i: number) => (
+    <li key={i}>{choice.title}</li>
   ));
 
   return (
