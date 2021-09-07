@@ -6,3 +6,4 @@ Dependencies:
 2. npm install --save react-router-dom
 3. npm install eslint --save-dev
 4. npx eslint --init
+5. npm i --save-dev @types/react-router-dom

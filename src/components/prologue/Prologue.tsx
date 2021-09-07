@@ -1,13 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Prologue: React.FC = ({ setUserName }) => {
+interface Props {
+  setUserName: React.Dispatch<React.SetStateAction<string>>;
+}
+
+const Prologue: React.FC<Props> = ({ setUserName }) => {
   return (
     <section>
       <h1>Prologue</h1>
       <p>Intro and Instructions</p>
       <form action="">
-        <input type="text" />
+        <label htmlFor="">
+          <input type="text" onChange={(e) => setUserName(e.target.value)} />
+        </label>
         <button>Submit</button>
       </form>
       
