@@ -14,3 +14,18 @@
 .Chapters p {
   margin: 2vw;
 }
+
+.Chapters ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10vw;
+  padding: 0;
+}
+
+.Chapters ul li {
+  list-style: none;
+  border: thin solid black;
+  width: 30vw;
+  padding: 10vw 0vw;
+  text-align: center;
+}
