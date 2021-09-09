@@ -1,9 +1,10 @@
 import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
+import ChapterDetails from './ChapterDetails';
 
 describe('tests for ChapterDetails component', () => {
   test('render ChapterDetails component on screen', () => {
-    render(<ChapterDetails userData={{}} />);
+    render(<ChapterDetails />);
 
     const element = screen.getByText('Choose your words wisely.')
 
@@ -11,7 +12,7 @@ describe('tests for ChapterDetails component', () => {
   });
 
   test('render list of choices', () => {
-    render(<ChapterDetails userData={{}} />);
+    render(<ChapterDetails />);
 
     const list = screen.getAllByRole('li')
 
@@ -20,7 +21,7 @@ describe('tests for ChapterDetails component', () => {
   });
 
   test('ChapterDetails will not be on screen after user choice is submitted', () => {
-    render(<ChapterDetails userData={{}} />);
+    render(<ChapterDetails />);
 
     const element = screen.getByText('Choose your words wisely.')
 
