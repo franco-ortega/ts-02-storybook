@@ -8,10 +8,6 @@ import Prologue from '../prologue/Prologue';
 import Chapters from '../chapters/Chapters';
 import ChapterDetails from '../chapters/ChapterDetails';
 
-// interface User {
-//   choices: string[]
-// }
-
 const App: React.FC = () => {
   const [userName, setUserName] = useState<string>('');
   const [userData, setUserData] = useState<string[]>([]);
@@ -36,7 +32,6 @@ const App: React.FC = () => {
           />
           <Route
             exact path="/chapters/:locale"
-            // component={ChapterDetails}
             render={() =>
               <ChapterDetails setUserData={setUserData} />
             }
