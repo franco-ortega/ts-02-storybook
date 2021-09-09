@@ -4,6 +4,7 @@ import {
   Route,
   Switch
 } from 'react-router-dom';
+import ChapterDetails from '../chapters/ChapterDetails';
 import Chapters from '../chapters/Chapters';
 import Prologue from '../prologue/Prologue';
 
@@ -26,6 +27,10 @@ const App: React.FC = () => {
             render={() =>
               <Chapters userName={userName} />
             }
+          />
+          <Route
+            exact path="/chapters/:locale"
+            component={ChapterDetails}
           />
         </Switch>
       </Router>
