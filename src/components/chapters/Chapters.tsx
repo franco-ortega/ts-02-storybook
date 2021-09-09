@@ -2,28 +2,29 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styles from './Chapters.module.css';
+import chapterData from '../../data/chapterData.json';
 
 interface Props {
   userName: string
 }
 
-interface Land {
-  title: string
+type ChapterInfo = {
+  title: string,
+  choices: string[]
 }
 
-const Chapters: React.FC<Props> = ({ userName }) => {
+type AllChapterInfo = ChapterInfo[]
 
-  const testChoices: Land[] = [
-    { title: 'Forest' },
-    { title: 'Mountains' },
-    { title: 'Swamp' }
-  ];
+const Chapters: React.FC<Props> = ({ userName }) => {
+  const locations: AllChapterInfo = Object.values(chapterData);
+
+  const titles = locations.map(location => location.title);
 
   // eslint-disable-next-line max-len
-  const chapterOptions: JSX.Element[] = testChoices.map((choice: Land, i: number) => (
-    <Link to={`chapters/${choice.title.toLowerCase()}`} key={i}>
+  const chapterOptions: JSX.Element[] = titles.map((choice: string, i: number) => (
+    <Link to={`chapters/${choice.toLowerCase()}`} key={i}>
       <li>
-        {choice.title}
+        {choice}
       </li>
     </Link>
   ));

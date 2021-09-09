@@ -1,0 +1,38 @@
+{
+  "forest": {
+    "title": "Forest",
+    "choices": [
+      "A", 
+      "B",
+      "C",
+      "J"
+    ]
+  },
+  "mountains": {
+    "title": "Mountains",
+    "choices": [
+      "D", 
+      "E",
+      "F",
+      "K"
+      ]
+  },
+  "swamp": {
+    "title": "Swamp",
+    "choices": [
+      "G", 
+      "H",
+      "I",
+      "L"
+      ]
+  },
+  "ocean": {
+    "title": "Ocean",
+    "choices": [
+      "M",
+      "N",
+      "O",
+      "P"
+    ]
+  }
+}

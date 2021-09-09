@@ -8,7 +8,7 @@ import Chapters from '../chapters/Chapters';
 import Prologue from '../prologue/Prologue';
 
 const App: React.FC = () => {
-  const [userName, setUserName] = useState<string>('test');
+  const [userName, setUserName] = useState<string>('');
 
   return (
     <div data-testid="app">
@@ -23,12 +23,6 @@ const App: React.FC = () => {
           />
           <Route
             exact path="/chapters"
-            render={() =>
-              <Chapters userName={userName} />
-            }
-          />
-          <Route
-            path="/chapters/:locale"
             render={() =>
               <Chapters userName={userName} />
             }
