@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import lands from '../../data/chapterData.json';
+import styles from './ChapterDetails.module.css';
 
 interface Props {
   setUserData: React.Dispatch<React.SetStateAction<string[]>>;
@@ -48,7 +49,7 @@ const ChapterDetails: React.FC<Props> = ({ setUserData }) => {
   ));
 
   return (
-    <main>
+    <main className={styles.ChapterDetails}>
       <h1>{header}</h1>
       <p>Choose your words wisely.</p>
       <form action="" onSubmit={onChoiceSubmit}>
