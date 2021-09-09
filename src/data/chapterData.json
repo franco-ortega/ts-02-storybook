@@ -2,37 +2,37 @@
   "forest": {
     "title": "Forest",
     "choices": [
-      "A", 
-      "B",
-      "C",
-      "J"
+      "All the trees.",
+      "Beware the bears.",
+      "Call your wild.",
+      "Just out of reach."
     ]
   },
   "mountains": {
     "title": "Mountains",
     "choices": [
-      "D", 
-      "E",
-      "F",
-      "K"
+      "Dwarven spirits soar!",
+      "Even stone crumbles.",
+      "Fly or fall?",
+      "Kinship above all."
       ]
   },
   "swamp": {
     "title": "Swamp",
     "choices": [
-      "G", 
-      "H",
-      "I",
-      "L"
+      "Gators be everywhere.",
+      "Hide now to thrive later.",
+      "Ill spirits cling to ye.",
+      "Lost in the fog."
       ]
   },
   "ocean": {
     "title": "Ocean",
     "choices": [
-      "M",
-      "N",
-      "O",
-      "P"
+      "Many waves til tomorrow.",
+      "Night shall pass before you pass.",
+      "Open skies spill onto the shore.",
+      "Parry the blade but not the brine."
     ]
   }
 }

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import lands from '../../data/chapterData.json';
 
@@ -14,6 +14,7 @@ interface Location {
 const ChapterDetails: React.FC<Props> = ({ setUserData }) => {
   const { locale } = useParams<{ locale: keyof typeof lands }>();
   const [inputData, setInputData] = useState<string>('');
+  const history = useHistory();
 
   // eslint-disable-next-line max-len
   const onChoiceChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
@@ -27,6 +28,8 @@ const ChapterDetails: React.FC<Props> = ({ setUserData }) => {
       console.log(inputData);
       return [...prevState, inputData];
     });
+
+    history.push('/chapters');
   };
 
   const setting: Location = lands[locale];
