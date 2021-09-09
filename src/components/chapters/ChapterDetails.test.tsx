@@ -7,7 +7,7 @@ describe('tests for ChapterDetails component', () => {
   test('render ChapterDetails component on screen', () => {
     render(
       <MemoryRouter>
-        <ChapterDetails userData={{}} />
+        <ChapterDetails setUserData={() => {}} />
       </MemoryRouter>
     );
 
@@ -19,7 +19,7 @@ describe('tests for ChapterDetails component', () => {
   test('render list of choices', () => {
     render(
       <MemoryRouter>
-        <ChapterDetails userData={{}} />
+        <ChapterDetails setUserData={() => {}} />
       </MemoryRouter>
     );
 
@@ -32,7 +32,7 @@ describe('tests for ChapterDetails component', () => {
   test('ChapterDetails will not be on screen after user choice is submitted', () => {
     render(
       <MemoryRouter>
-        <ChapterDetails userData={{}} />
+        <ChapterDetails setUserData={() => {}} />
       </MemoryRouter>
     );
 
