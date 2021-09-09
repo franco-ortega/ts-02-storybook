@@ -4,11 +4,14 @@ import {
   Route,
   Switch
 } from 'react-router-dom';
-import Chapters from '../chapters/Chapters';
 import Prologue from '../prologue/Prologue';
+import Chapters from '../chapters/Chapters';
+import ChapterDetails from '../chapters/ChapterDetails';
 
 const App: React.FC = () => {
-  const [userName, setUserName] = useState<string>('test');
+  const [userName, setUserName] = useState<string>('');
+  const [userData, setUserData] = useState<string[]>([]);
+  console.log(userData);
 
   return (
     <div data-testid="app">
@@ -25,6 +28,12 @@ const App: React.FC = () => {
             exact path="/chapters"
             render={() =>
               <Chapters userName={userName} />
+            }
+          />
+          <Route
+            exact path="/chapters/:locale"
+            render={() =>
+              <ChapterDetails setUserData={setUserData} />
             }
           />
         </Switch>
