@@ -7,11 +7,14 @@ import {
 import Prologue from '../prologue/Prologue';
 import Chapters from '../chapters/Chapters';
 import ChapterDetails from '../chapters/ChapterDetails';
+import { useCompleted } from '../../hooks/useCompleted';
 
 const App: React.FC = () => {
   const [userName, setUserName] = useState<string>('');
   const [userData, setUserData] = useState<string[]>([]);
+  const { completed, completeChapter } = useCompleted();
   console.log(userData);
+  console.log(completed);
 
   return (
     <div data-testid="app">
@@ -33,7 +36,10 @@ const App: React.FC = () => {
           <Route
             exact path="/chapters/:locale"
             render={() =>
-              <ChapterDetails setUserData={setUserData} />
+              <ChapterDetails
+                setUserData={setUserData}
+                completeChapter={completeChapter}
+              />
             }
           />
         </Switch>

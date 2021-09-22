@@ -3,19 +3,23 @@ import { useHistory, useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import lands from '../../data/chapterData.json';
 import styles from './ChapterDetails.module.css';
+// import { useCompleted } from '../../hooks/useCompleted';
 
 interface Props {
   setUserData: React.Dispatch<React.SetStateAction<string[]>>;
+  completeChapter: () => void;
 }
 interface Location {
  title: string,
   choices: string[]
 }
 
-const ChapterDetails: React.FC<Props> = ({ setUserData }) => {
+const ChapterDetails: React.FC<Props> = ({ setUserData, completeChapter }) => {
   const { locale } = useParams<{ locale: keyof typeof lands }>();
   const [inputData, setInputData] = useState<string>('');
   const history = useHistory();
+
+  // const { completeChapter } = useCompleted();
 
   // eslint-disable-next-line max-len
   const onChoiceChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
@@ -29,6 +33,8 @@ const ChapterDetails: React.FC<Props> = ({ setUserData }) => {
       console.log(inputData);
       return [...prevState, inputData];
     });
+
+    completeChapter();
 
     history.push('/chapters');
   };
@@ -61,7 +67,8 @@ const ChapterDetails: React.FC<Props> = ({ setUserData }) => {
 };
 
 ChapterDetails.propTypes = {
-  setUserData: PropTypes.func.isRequired
+  setUserData: PropTypes.func.isRequired,
+  completeChapter: PropTypes.func.isRequired
 };
 
 export default ChapterDetails;

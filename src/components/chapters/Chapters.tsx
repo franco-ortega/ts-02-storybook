@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styles from './Chapters.module.css';
 import chapterData from '../../data/chapterData.json';
+// import { useCompleted } from '../../hooks/useCompleted';
 
 interface Props {
   userName: string
@@ -17,14 +18,16 @@ type AllChapterInfo = ChapterInfo[]
 
 const Chapters: React.FC<Props> = ({ userName }) => {
   const locations: AllChapterInfo = Object.values(chapterData);
+  // const { completed, completeChapter } = useCompleted();
 
   const titles = locations.map(location => location.title);
+  console.log(titles);
 
   // eslint-disable-next-line max-len
-  const chapterOptions: JSX.Element[] = titles.map((choice: string, i: number) => (
-    <Link to={`chapters/${choice.toLowerCase()}`} key={i}>
+  const chapters: JSX.Element[] = titles.map((title: string, i: number) => (
+    <Link to={`chapters/${title.toLowerCase()}`} key={i}>
       <li>
-        {choice}
+        {title}
       </li>
     </Link>
   ));
@@ -35,7 +38,7 @@ const Chapters: React.FC<Props> = ({ userName }) => {
       <p>
         Hello, {userName}. This is where you create your story.
       </p>
-      <ul>{chapterOptions}</ul>
+      <ul>{chapters}</ul>
     </section>
   );
 };
