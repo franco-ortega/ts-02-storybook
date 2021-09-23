@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styles from './Chapters.module.css';
 import chapterData from '../../data/chapterData.json';
-// import { useCompleted } from '../../hooks/useCompleted';
 
 interface Props {
   userName: string
+  // completed: {[key: string]: boolean}
 }
 
 type ChapterInfo = {
@@ -18,7 +18,21 @@ type AllChapterInfo = ChapterInfo[]
 
 const Chapters: React.FC<Props> = ({ userName }) => {
   const locations: AllChapterInfo = Object.values(chapterData);
-  // const { completed, completeChapter } = useCompleted();
+  // const [completed, setCompleted] = useState<{[key: string]: boolean}>({});
+
+  // console.log(setCompleted);
+  // console.log(completed);
+
+  // const completedChapters: {[key: string]: boolean} = {};
+
+  // locations.forEach(location => {
+  //   const key = location.title;
+  //   console.log('KEY: ' + key);
+  //   completed[key] = false;
+  // });
+
+  // console.log(completedChapters);
+
 
   const titles = locations.map(location => location.title);
   console.log(titles);
@@ -45,6 +59,7 @@ const Chapters: React.FC<Props> = ({ userName }) => {
 
 Chapters.propTypes = {
   userName: PropTypes.string.isRequired
+  // completed: PropTypes.object.isRequired
 };
 
 export default Chapters;

@@ -7,14 +7,34 @@ import {
 import Prologue from '../prologue/Prologue';
 import Chapters from '../chapters/Chapters';
 import ChapterDetails from '../chapters/ChapterDetails';
-import { useCompleted } from '../../hooks/useCompleted';
+
+// import chapterData from '../../data/chapterData.json';
+
+// type ChapterInfo = {
+//   title: string,
+//   choices: string[]
+// }
+
+// type AllChapterInfo = ChapterInfo[]
+
 
 const App: React.FC = () => {
   const [userName, setUserName] = useState<string>('');
   const [userData, setUserData] = useState<string[]>([]);
-  const { completed, completeChapter } = useCompleted();
   console.log(userData);
-  console.log(completed);
+
+  // const locations: AllChapterInfo = Object.values(chapterData);
+
+  // const [completed, setCompleted] = useState<{[key: string]: boolean}>({});
+
+  // locations.forEach(location => {
+  //   const key = location.title;
+  //   console.log('KEY: ' + key);
+  //   completed[key] = false;
+  // });
+
+
+
 
   return (
     <div data-testid="app">
@@ -30,7 +50,10 @@ const App: React.FC = () => {
           <Route
             exact path="/chapters"
             render={() =>
-              <Chapters userName={userName} />
+              <Chapters
+                userName={userName}
+                // completed={completed}
+              />
             }
           />
           <Route
@@ -38,7 +61,7 @@ const App: React.FC = () => {
             render={() =>
               <ChapterDetails
                 setUserData={setUserData}
-                completeChapter={completeChapter}
+                // setCompleted={setCompleted}
               />
             }
           />
