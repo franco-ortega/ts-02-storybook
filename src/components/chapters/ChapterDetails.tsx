@@ -6,6 +6,7 @@ import styles from './ChapterDetails.module.css';
 // import { useCompleted } from '../../hooks/useCompleted';
 
 interface Props {
+  userData: string[]
   setUserData: React.Dispatch<React.SetStateAction<string[]>>
 // setCompleted: React.Dispatch<React.SetStateAction<{[key: string]: boolean}>>
 }
@@ -15,10 +16,12 @@ interface Location {
   choices: string[]
 }
 
-const ChapterDetails: React.FC<Props> = ({ setUserData }) => {
+const ChapterDetails: React.FC<Props> = ({ userData, setUserData }) => {
   const { locale } = useParams<{ locale: keyof typeof lands }>();
   const [inputData, setInputData] = useState<string>('');
   const history = useHistory();
+
+  console.log({ userData });
 
 
   // eslint-disable-next-line max-len
@@ -41,7 +44,8 @@ const ChapterDetails: React.FC<Props> = ({ setUserData }) => {
     //   return prevState[locale] = true;
     // });
 
-    history.push('/chapters');
+    if(userData.length === 3) history.push('/story');
+    else history.push('/chapters');
   };
 
   const setting: Location = lands[locale];
@@ -72,6 +76,7 @@ const ChapterDetails: React.FC<Props> = ({ setUserData }) => {
 };
 
 ChapterDetails.propTypes = {
+  userData: PropTypes.array.isRequired,
   setUserData: PropTypes.func.isRequired
   // setCompleted: PropTypes.func.isRequired
 };

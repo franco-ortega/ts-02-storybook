@@ -7,6 +7,7 @@ import {
 import Prologue from '../prologue/Prologue';
 import Chapters from '../chapters/Chapters';
 import ChapterDetails from '../chapters/ChapterDetails';
+import Story from '../story/Story';
 
 // import chapterData from '../../data/chapterData.json';
 
@@ -21,7 +22,6 @@ import ChapterDetails from '../chapters/ChapterDetails';
 const App: React.FC = () => {
   const [userName, setUserName] = useState<string>('');
   const [userData, setUserData] = useState<string[]>([]);
-  console.log(userData);
 
   // const locations: AllChapterInfo = Object.values(chapterData);
 
@@ -60,8 +60,17 @@ const App: React.FC = () => {
             exact path="/chapters/:locale"
             render={() =>
               <ChapterDetails
+                userData={userData}
                 setUserData={setUserData}
                 // setCompleted={setCompleted}
+              />
+            }
+          />
+          <Route
+            exact path="/story"
+            render={() =>
+              <Story
+                userData={userData}
               />
             }
           />

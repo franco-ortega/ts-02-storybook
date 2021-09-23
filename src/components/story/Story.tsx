@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './Story.module.css';
 
 interface Props {
   userData: string[]
@@ -7,10 +8,15 @@ interface Props {
 
 const Story: React.FC<Props> = ({ userData }) => {
   console.log(userData);
+  const userStory = userData.map((data, index) => (
+    <p key={index}>{data}</p>
+  ));
+
   return (
-    <div>
-      Your story...
-    </div>
+    <main className={styles.Story}>
+      <h1>Your story...</h1>
+      <div>{userStory}</div>
+    </main>
   );
 };
 
