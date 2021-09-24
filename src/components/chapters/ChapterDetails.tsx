@@ -19,10 +19,8 @@ interface Location {
 const ChapterDetails: React.FC<Props> = ({ userData, setUserData }) => {
   const { locale } = useParams<{ locale: keyof typeof lands }>();
   const [inputData, setInputData] = useState<string>('');
+  const totalLands = Object.keys(lands);
   const history = useHistory();
-
-  console.log({ userData });
-
 
   // eslint-disable-next-line max-len
   const onChoiceChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
@@ -44,7 +42,7 @@ const ChapterDetails: React.FC<Props> = ({ userData, setUserData }) => {
     //   return prevState[locale] = true;
     // });
 
-    if(userData.length === 3) history.push('/story');
+    if(userData.length === totalLands.length - 1) history.push('/story');
     else history.push('/chapters');
   };
 
