@@ -34,5 +34,59 @@
       "Open skies spill onto the shore.",
       "Parry the blade but not the brine."
     ]
+  },
+  "desert": {
+    "title": "Desert",
+    "choices": [
+      "Many waves til tomorrow.",
+      "Night shall pass before you pass.",
+      "Open skies spill onto the shore.",
+      "Parry the blade but not the brine."
+    ]
+  },
+  "jungle": {
+    "title": "Jungle",
+    "choices": [
+      "Many waves til tomorrow.",
+      "Night shall pass before you pass.",
+      "Open skies spill onto the shore.",
+      "Parry the blade but not the brine."
+    ]
+  },
+  "tundra": {
+    "title": "Tundra",
+    "choices": [
+      "Many waves til tomorrow.",
+      "Night shall pass before you pass.",
+      "Open skies spill onto the shore.",
+      "Parry the blade but not the brine."
+    ]
+  },
+  "plains": {
+    "title": "Plains",
+    "choices": [
+      "Many waves til tomorrow.",
+      "Night shall pass before you pass.",
+      "Open skies spill onto the shore.",
+      "Parry the blade but not the brine."
+    ]
+  },
+  "hills": {
+    "title": "Hills",
+    "choices": [
+      "Many waves til tomorrow.",
+      "Night shall pass before you pass.",
+      "Open skies spill onto the shore.",
+      "Parry the blade but not the brine."
+    ]
+  },
+  "caves": {
+    "title": "Caves",
+    "choices": [
+      "Many waves til tomorrow.",
+      "Night shall pass before you pass.",
+      "Open skies spill onto the shore.",
+      "Parry the blade but not the brine."
+    ]
   }
 }
