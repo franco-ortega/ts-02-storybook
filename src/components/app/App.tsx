@@ -71,6 +71,7 @@ const App: React.FC = () => {
             render={() =>
               <Story
                 userData={userData}
+                setUserData={setUserData}
               />
             }
           />
