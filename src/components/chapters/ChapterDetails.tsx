@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import lands from '../../data/chapterData.json';
 import styles from './ChapterDetails.module.css';
 // import { useCompleted } from '../../hooks/useCompleted';
@@ -15,9 +15,13 @@ interface userSelection {
   choice: string
 }
 
+type allUserSelections = {
+  [key: string]: userSelection
+}
+
 interface Props {
-  userData: userSelection[]
-  setUserData: React.Dispatch<React.SetStateAction<userSelection[]>>
+  userData: allUserSelections
+  setUserData: React.Dispatch<React.SetStateAction<allUserSelections>>
 // setCompleted: React.Dispatch<React.SetStateAction<{[key: string]: boolean}>>
 }
 
@@ -57,8 +61,11 @@ const ChapterDetails: React.FC<Props> = ({ userData, setUserData }) => {
         choice: inputData
       };
 
-      console.log(inputData);
-      return [...prevState, newItem];
+      prevState[locale] = newItem;
+      console.log(newItem);
+      return prevState;
+
+      // return [...prevState, newItem];
     });
 
     // setCompleted(prevState => {
@@ -68,8 +75,10 @@ const ChapterDetails: React.FC<Props> = ({ userData, setUserData }) => {
     //   return prevState[locale] = true;
     // });
 
-    if(userData.length === totalLands.length - 1) history.push('/story');
-    else history.push('/chapters');
+    if(Object.keys(userData).length === totalLands.length - 1) {
+      history.push('/story');
+    } else history.push('/chapters');
+    // history.push('/chapters');
   };
 
   const setting: Location = lands[locale];
@@ -99,10 +108,10 @@ const ChapterDetails: React.FC<Props> = ({ userData, setUserData }) => {
   );
 };
 
-ChapterDetails.propTypes = {
-  userData: PropTypes.array.isRequired,
-  setUserData: PropTypes.func.isRequired
-  // setCompleted: PropTypes.func.isRequired
-};
+// ChapterDetails.propTypes = {
+//   userData: PropTypes.object.isRequired,
+//   setUserData: PropTypes.func.isRequired
+//   // setCompleted: PropTypes.func.isRequired
+// };
 
 export default ChapterDetails;

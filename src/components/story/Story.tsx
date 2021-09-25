@@ -13,37 +13,43 @@ interface userSelection {
   choice: string
 }
 
-interface Props {
-  userData: userSelection[],
-  setUserData: React.Dispatch<React.SetStateAction<userSelection[]>>
+type allUserSelections = {
+  [key: string]: userSelection
 }
 
-const Story: React.FC<Props> = ({ userData, setUserData }) => {
+interface Props {
+  userData: allUserSelections,
+  setUserData: React.Dispatch<React.SetStateAction<allUserSelections>>
+}
+
+const Story: React.FC<Props> = ({
+  // userData,
+  setUserData }) => {
   const history = useHistory();
   // Loop through userData selections and concatenate them
   // together to create the story
-  const userStory = userData.reduce((previous, current, index) => {
-    if(index < userData.length - 1) return previous + current + ' ';
-    else return previous + current;
-  }, '');
+  // const userStory = userData.reduce((previous, current, index) => {
+  //   if(index < userData.length - 1) return previous + current + ' ';
+  //   else return previous + current;
+  // }, '');
 
   const onNewStoryClick = () => {
     console.log('New Story clicked');
-    setUserData([]);
+    // setUserData([]);
     history.push('/');
   };
 
   return (
     <main className={styles.Story}>
       <h1>Your story...</h1>
-      <p>{userStory}</p>
+      {/* <p>{userStory}</p> */}
       <button onClick={onNewStoryClick}>New Story</button>
     </main>
   );
 };
 
 Story.propTypes = {
-  userData: PropTypes.array.isRequired,
+  // userData: PropTypes.array.isRequired,
   setUserData: PropTypes.func.isRequired
 };
 

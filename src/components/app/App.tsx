@@ -9,7 +9,7 @@ import Chapters from '../chapters/Chapters';
 import ChapterDetails from '../chapters/ChapterDetails';
 import Story from '../story/Story';
 
-// import chapterData from '../../data/chapterData.json';
+import chapterData from '../../data/chapterData.json';
 
 // type ChapterInfo = {
 //   title: string,
@@ -35,10 +35,17 @@ interface userSelection {
   choice: string
 }
 
+// type chapterLocation = keyof typeof chapterData;
+
+type allUserSelections = {
+  [key: string]: userSelection
+}
+
 
 const App: React.FC = () => {
   const [userName, setUserName] = useState<string>('');
-  const [userData, setUserData] = useState<userSelection[]>([]);
+  // const [userData, setUserData] = useState<userSelection[]>([]);
+  const [userData, setUserData] = useState<allUserSelections>({});
 
   // const locations: AllChapterInfo = Object.values(chapterData);
 
