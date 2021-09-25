@@ -5,10 +5,15 @@ import lands from '../../data/chapterData.json';
 import styles from './ChapterDetails.module.css';
 // import { useCompleted } from '../../hooks/useCompleted';
 
-type userSelection = [
-  string,
-  string
-]
+// type userSelection = [
+//   string,
+//   string
+// ]
+
+interface userSelection {
+  chapter: string,
+  choice: string
+}
 
 interface Props {
   userData: userSelection[]
@@ -47,7 +52,10 @@ const ChapterDetails: React.FC<Props> = ({ userData, setUserData }) => {
       // ]
       //]
       // const completed = true;
-      const newItem: userSelection = [inputData, locale];
+      const newItem: userSelection = {
+        chapter: locale,
+        choice: inputData
+      };
 
       console.log(inputData);
       return [...prevState, newItem];

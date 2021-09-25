@@ -25,10 +25,15 @@ import Story from '../story/Story';
 //   ]
 // }
 
-type userSelection = [
-    string,
-    string
-]
+// type userSelection = [
+//     string,
+//     string
+// ]
+
+interface userSelection {
+  chapter: string,
+  choice: string
+}
 
 
 const App: React.FC = () => {

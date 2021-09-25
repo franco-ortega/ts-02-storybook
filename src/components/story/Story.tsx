@@ -3,10 +3,15 @@ import PropTypes from 'prop-types';
 import styles from './Story.module.css';
 import { useHistory } from 'react-router';
 
-type userSelection = [
-  string,
-  string
-]
+// type userSelection = [
+//   string,
+//   string
+// ]
+
+interface userSelection {
+  chapter: string,
+  choice: string
+}
 
 interface Props {
   userData: userSelection[],
