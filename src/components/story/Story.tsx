@@ -1,5 +1,5 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import styles from './Story.module.css';
 import { useHistory } from 'react-router';
 
@@ -32,13 +32,6 @@ const Story: React.FC<Props> = ({ userData, setUserData }) => {
   // }, '');
 
   let userStory = '';
-  // let counter = 0;
-
-  // while(counter < 10) {
-  //   console.log('counting');
-
-  //   counter++;
-  // }
 
   for(const locale in userData) {
     console.log('Putting this together');
@@ -61,9 +54,9 @@ const Story: React.FC<Props> = ({ userData, setUserData }) => {
   );
 };
 
-// Story.propTypes = {
-//   userData: PropTypes.array.isRequired,
-//   setUserData: PropTypes.func.isRequired
-// };
+Story.propTypes = {
+  userData: PropTypes.shape({}).isRequired,
+  setUserData: PropTypes.func.isRequired
+};
 
 export default Story;

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import lands from '../../data/chapterData.json';
 import styles from './ChapterDetails.module.css';
 // import { useCompleted } from '../../hooks/useCompleted';
@@ -108,10 +108,10 @@ const ChapterDetails: React.FC<Props> = ({ userData, setUserData }) => {
   );
 };
 
-// ChapterDetails.propTypes = {
-//   userData: PropTypes.object.isRequired,
-//   setUserData: PropTypes.func.isRequired
-//   // setCompleted: PropTypes.func.isRequired
-// };
+ChapterDetails.propTypes = {
+  userData: PropTypes.shape({}).isRequired,
+  setUserData: PropTypes.func.isRequired
+  // setCompleted: PropTypes.func.isRequired
+};
 
 export default ChapterDetails;
