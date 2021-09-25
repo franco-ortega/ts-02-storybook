@@ -18,12 +18,17 @@ import Story from '../story/Story';
 
 // type AllChapterInfo = ChapterInfo[]
 
-interface ChapterInfo {
-  info: [
-    choice: string,
-    completed: boolean
-  ]
-}
+// interface ChapterInfo {
+//   info: [
+//     choice: string,
+//     completed: boolean
+//   ]
+// }
+
+type ChapterInfo = [
+    string,
+    boolean
+]
 
 
 const App: React.FC = () => {

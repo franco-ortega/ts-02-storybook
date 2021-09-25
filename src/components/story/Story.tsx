@@ -3,9 +3,14 @@ import PropTypes from 'prop-types';
 import styles from './Story.module.css';
 import { useHistory } from 'react-router';
 
+type ChapterInfo = [
+  string,
+  boolean
+]
+
 interface Props {
-  userData: string[],
-  setUserData: React.Dispatch<React.SetStateAction<string[]>>
+  userData: ChapterInfo[],
+  setUserData: React.Dispatch<React.SetStateAction<ChapterInfo[]>>
 }
 
 const Story: React.FC<Props> = ({ userData, setUserData }) => {
