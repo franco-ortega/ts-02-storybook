@@ -6,7 +6,6 @@ import chapterData from '../../data/chapterData.json';
 
 interface Props {
   userName: string
-  // completed: {[key: string]: boolean}
 }
 
 type ChapterInfo = {
@@ -18,26 +17,9 @@ type ChapterList = ChapterInfo[]
 
 const Chapters: React.FC<Props> = ({ userName }) => {
   const locations: ChapterList = Object.values(chapterData);
-  // const [completed, setCompleted] = useState<{[key: string]: boolean}>({});
-
-  // console.log(setCompleted);
-  // console.log(completed);
-
-  // const completedChapters: {[key: string]: boolean} = {};
-
-  // locations.forEach(location => {
-  //   const key = location.title;
-  //   console.log('KEY: ' + key);
-  //   completed[key] = false;
-  // });
-
-  // console.log(completedChapters);
-
 
   const titles = locations.map(location => location.title);
-  console.log(titles);
 
-  // eslint-disable-next-line max-len
   const chapters: JSX.Element[] = titles.map((title: string, i: number) => (
     <Link to={`chapters/${title.toLowerCase()}`} key={i}>
       <li>
@@ -59,7 +41,6 @@ const Chapters: React.FC<Props> = ({ userName }) => {
 
 Chapters.propTypes = {
   userName: PropTypes.string.isRequired
-  // completed: PropTypes.object.isRequired
 };
 
 export default Chapters;

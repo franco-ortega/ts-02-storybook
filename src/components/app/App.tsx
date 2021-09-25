@@ -9,56 +9,20 @@ import Chapters from '../chapters/Chapters';
 import ChapterDetails from '../chapters/ChapterDetails';
 import Story from '../story/Story';
 
-import chapterData from '../../data/chapterData.json';
-
-// type ChapterInfo = {
-//   title: string,
-//   choices: string[]
-// }
-
-// type AllChapterInfo = ChapterInfo[]
-
-// interface ChapterInfo {
-//   info: [
-//     choice: string,
-//     completed: boolean
-//   ]
-// }
-
-// type userSelection = [
-//     string,
-//     string
-// ]
+// import chapterData from '../../data/chapterData.json';
 
 interface userSelection {
   chapter: string,
   choice: string
 }
 
-// type chapterLocation = keyof typeof chapterData;
-
-type allUserSelections = {
+interface allUserSelections {
   [key: string]: userSelection
 }
 
-
 const App: React.FC = () => {
   const [userName, setUserName] = useState<string>('');
-  // const [userData, setUserData] = useState<userSelection[]>([]);
   const [userData, setUserData] = useState<allUserSelections>({});
-
-  // const locations: AllChapterInfo = Object.values(chapterData);
-
-  // const [completed, setCompleted] = useState<{[key: string]: boolean}>({});
-
-  // locations.forEach(location => {
-  //   const key = location.title;
-  //   console.log('KEY: ' + key);
-  //   completed[key] = false;
-  // });
-
-
-
 
   return (
     <div data-testid="app">
@@ -76,7 +40,6 @@ const App: React.FC = () => {
             render={() =>
               <Chapters
                 userName={userName}
-                // completed={completed}
               />
             }
           />
@@ -86,7 +49,6 @@ const App: React.FC = () => {
               <ChapterDetails
                 userData={userData}
                 setUserData={setUserData}
-                // setCompleted={setCompleted}
               />
             }
           />
