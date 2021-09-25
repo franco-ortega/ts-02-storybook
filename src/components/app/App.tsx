@@ -18,10 +18,17 @@ import Story from '../story/Story';
 
 // type AllChapterInfo = ChapterInfo[]
 
+interface ChapterInfo {
+  info: [
+    choice: string,
+    completed: boolean
+  ]
+}
+
 
 const App: React.FC = () => {
   const [userName, setUserName] = useState<string>('');
-  const [userData, setUserData] = useState<string[]>([]);
+  const [userData, setUserData] = useState<ChapterInfo[]>([]);
 
   // const locations: AllChapterInfo = Object.values(chapterData);
 
