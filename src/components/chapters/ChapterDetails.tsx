@@ -75,7 +75,7 @@ const ChapterDetails: React.FC<Props> = ({ userData, setUserData }) => {
     //   return prevState[locale] = true;
     // });
 
-    if(Object.keys(userData).length === totalLands.length - 1) {
+    if(Object.keys(userData).length === totalLands.length) {
       history.push('/story');
     } else history.push('/chapters');
     // history.push('/chapters');
