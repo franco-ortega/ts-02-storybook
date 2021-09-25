@@ -7,7 +7,7 @@ import styles from './ChapterDetails.module.css';
 
 type ChapterInfo = [
   string,
-  boolean
+  string
 ]
 
 interface Props {
@@ -46,8 +46,8 @@ const ChapterDetails: React.FC<Props> = ({ userData, setUserData }) => {
       //   completed: boolean
       // ]
       //]
-      const completed = true;
-      const newItem: ChapterInfo = [inputData, completed];
+      // const completed = true;
+      const newItem: ChapterInfo = [inputData, locale];
 
       console.log(inputData);
       return [...prevState, newItem];

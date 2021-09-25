@@ -5,7 +5,7 @@ import { useHistory } from 'react-router';
 
 type ChapterInfo = [
   string,
-  boolean
+  string
 ]
 
 interface Props {

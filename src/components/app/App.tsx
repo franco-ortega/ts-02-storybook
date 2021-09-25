@@ -27,7 +27,7 @@ import Story from '../story/Story';
 
 type ChapterInfo = [
     string,
-    boolean
+    string
 ]
 
 
