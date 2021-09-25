@@ -25,7 +25,7 @@ import Story from '../story/Story';
 //   ]
 // }
 
-type ChapterInfo = [
+type userSelection = [
     string,
     string
 ]
@@ -33,7 +33,7 @@ type ChapterInfo = [
 
 const App: React.FC = () => {
   const [userName, setUserName] = useState<string>('');
-  const [userData, setUserData] = useState<ChapterInfo[]>([]);
+  const [userData, setUserData] = useState<userSelection[]>([]);
 
   // const locations: AllChapterInfo = Object.values(chapterData);
 

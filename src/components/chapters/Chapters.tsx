@@ -14,10 +14,10 @@ type ChapterInfo = {
   choices: string[]
 }
 
-type AllChapterInfo = ChapterInfo[]
+type ChapterList = ChapterInfo[]
 
 const Chapters: React.FC<Props> = ({ userName }) => {
-  const locations: AllChapterInfo = Object.values(chapterData);
+  const locations: ChapterList = Object.values(chapterData);
   // const [completed, setCompleted] = useState<{[key: string]: boolean}>({});
 
   // console.log(setCompleted);

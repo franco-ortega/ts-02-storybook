@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 import styles from './Story.module.css';
 import { useHistory } from 'react-router';
 
-type ChapterInfo = [
+type userSelection = [
   string,
   string
 ]
 
 interface Props {
-  userData: ChapterInfo[],
-  setUserData: React.Dispatch<React.SetStateAction<ChapterInfo[]>>
+  userData: userSelection[],
+  setUserData: React.Dispatch<React.SetStateAction<userSelection[]>>
 }
 
 const Story: React.FC<Props> = ({ userData, setUserData }) => {

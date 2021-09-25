@@ -5,14 +5,14 @@ import lands from '../../data/chapterData.json';
 import styles from './ChapterDetails.module.css';
 // import { useCompleted } from '../../hooks/useCompleted';
 
-type ChapterInfo = [
+type userSelection = [
   string,
   string
 ]
 
 interface Props {
-  userData: ChapterInfo[]
-  setUserData: React.Dispatch<React.SetStateAction<ChapterInfo[]>>
+  userData: userSelection[]
+  setUserData: React.Dispatch<React.SetStateAction<userSelection[]>>
 // setCompleted: React.Dispatch<React.SetStateAction<{[key: string]: boolean}>>
 }
 
@@ -47,7 +47,7 @@ const ChapterDetails: React.FC<Props> = ({ userData, setUserData }) => {
       // ]
       //]
       // const completed = true;
-      const newItem: ChapterInfo = [inputData, locale];
+      const newItem: userSelection = [inputData, locale];
 
       console.log(inputData);
       return [...prevState, newItem];
