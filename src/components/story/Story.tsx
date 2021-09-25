@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import styles from './Story.module.css';
 import { useHistory } from 'react-router';
 
@@ -22,9 +22,7 @@ interface Props {
   setUserData: React.Dispatch<React.SetStateAction<allUserSelections>>
 }
 
-const Story: React.FC<Props> = ({
-  // userData,
-  setUserData }) => {
+const Story: React.FC<Props> = ({ userData, setUserData }) => {
   const history = useHistory();
   // Loop through userData selections and concatenate them
   // together to create the story
@@ -33,24 +31,39 @@ const Story: React.FC<Props> = ({
   //   else return previous + current;
   // }, '');
 
+  let userStory = '';
+  // let counter = 0;
+
+  // while(counter < 10) {
+  //   console.log('counting');
+
+  //   counter++;
+  // }
+
+  for(const locale in userData) {
+    console.log('Putting this together');
+    const sentence = userData[locale].choice;
+    userStory += `${sentence} `;
+  }
+
   const onNewStoryClick = () => {
     console.log('New Story clicked');
-    // setUserData([]);
+    setUserData({});
     history.push('/');
   };
 
   return (
     <main className={styles.Story}>
       <h1>Your story...</h1>
-      {/* <p>{userStory}</p> */}
+      <p>{userStory}</p>
       <button onClick={onNewStoryClick}>New Story</button>
     </main>
   );
 };
 
-Story.propTypes = {
-  // userData: PropTypes.array.isRequired,
-  setUserData: PropTypes.func.isRequired
-};
+// Story.propTypes = {
+//   userData: PropTypes.array.isRequired,
+//   setUserData: PropTypes.func.isRequired
+// };
 
 export default Story;
