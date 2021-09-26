@@ -5,20 +5,24 @@ import lands from '../../data/chapterData.json';
 import styles from './ChapterDetails.module.css';
 // import { useCompleted } from '../../hooks/useCompleted';
 
-type ChapterInfo = [
-  string,
-  string
-]
 
-interface Props {
-  userData: ChapterInfo[]
-  setUserData: React.Dispatch<React.SetStateAction<ChapterInfo[]>>
-// setCompleted: React.Dispatch<React.SetStateAction<{[key: string]: boolean}>>
+interface userSelection {
+  chapter: string,
+  choice: string
+}
+
+interface allUserSelections {
+  [key: string]: userSelection
 }
 
 interface Location {
- title: string,
-  choices: string[]
+  title: string,
+   choices: string[]
+} 
+
+interface Props {
+  userData: allUserSelections
+  setUserData: React.Dispatch<React.SetStateAction<allUserSelections>>
 }
 
 const ChapterDetails: React.FC<Props> = ({ userData, setUserData }) => {
@@ -27,7 +31,6 @@ const ChapterDetails: React.FC<Props> = ({ userData, setUserData }) => {
   const totalLands = Object.keys(lands);
   const history = useHistory();
 
-  // eslint-disable-next-line max-len
   const onChoiceChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     setInputData(e.target.value);
   };
@@ -36,32 +39,20 @@ const ChapterDetails: React.FC<Props> = ({ userData, setUserData }) => {
   const onChoiceSubmit: React.FormEventHandler = (e: React.FormEvent<HTMLInputElement>): void => {
     e.preventDefault();
     setUserData(prevState => {
-      //[
-      // [
-      //   choice: string,
-      //   completed: boolean
-      // ]
-      // [
-      //   choice: string,
-      //   completed: boolean
-      // ]
-      //]
-      // const completed = true;
-      const newItem: ChapterInfo = [inputData, locale];
+      const newItem: userSelection = {
+        chapter: locale,
+        choice: inputData
+      };
 
-      console.log(inputData);
-      return [...prevState, newItem];
+      prevState[locale] = newItem;
+      return prevState;
     });
 
-    // setCompleted(prevState => {
-    //   prevState[locale] = true;
-    //   updatedKey = true;
-    //   prevState = { ...prevState, updatedKey };
-    //   return prevState[locale] = true;
-    // });
-
-    if(userData.length === totalLands.length - 1) history.push('/story');
-    else history.push('/chapters');
+    // Redirect user to Story component when the number of chapters completed
+    // equals the total number of chapters
+    if(Object.keys(userData).length === totalLands.length) {
+      history.push('/story');
+    } else history.push('/chapters');
   };
 
   const setting: Location = lands[locale];
@@ -92,9 +83,8 @@ const ChapterDetails: React.FC<Props> = ({ userData, setUserData }) => {
 };
 
 ChapterDetails.propTypes = {
-  userData: PropTypes.array.isRequired,
+  userData: PropTypes.shape({}).isRequired,
   setUserData: PropTypes.func.isRequired
-  // setCompleted: PropTypes.func.isRequired
 };
 
 export default ChapterDetails;

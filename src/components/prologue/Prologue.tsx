@@ -13,7 +13,6 @@ const Prologue: React.FC<Props> = ({ setUserName }) => {
   // eslint-disable-next-line max-len
   const onNameSubmit: React.FormEventHandler = (e: React.FormEvent<HTMLInputElement>): void => {
     e.preventDefault();
-    console.log('Name form clicked');
     history.push('/chapters');
   };
 
