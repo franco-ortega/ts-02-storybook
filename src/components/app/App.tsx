@@ -8,17 +8,10 @@ import Prologue from '../prologue/Prologue';
 import Chapters from '../chapters/Chapters';
 import ChapterDetails from '../chapters/ChapterDetails';
 import Story from '../story/Story';
+import { allUserSelections } from '../../utils/interfaces';
 
-// import chapterData from '../../data/chapterData.json';
-
-interface userSelection {
-  chapter: string,
-  choice: string
-}
-
-interface allUserSelections {
-  [key: string]: userSelection
-}
+// TO DO LIST:
+// Add "Go Back" button to ChapterDetails
 
 const App: React.FC = () => {
   const [userName, setUserName] = useState<string>('');

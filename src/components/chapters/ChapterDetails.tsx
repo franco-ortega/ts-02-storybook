@@ -3,22 +3,11 @@ import { useHistory, useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import lands from '../../data/chapterData.json';
 import styles from './ChapterDetails.module.css';
-// import { useCompleted } from '../../hooks/useCompleted';
-
-
-interface userSelection {
-  chapter: string,
-  choice: string
-}
-
-interface allUserSelections {
-  [key: string]: userSelection
-}
-
-interface Location {
-  title: string,
-   choices: string[]
-} 
+import {
+  allUserSelections,
+  Location,
+  userSelection
+} from '../../utils/interfaces';
 
 interface Props {
   userData: allUserSelections
