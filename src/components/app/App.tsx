@@ -8,21 +8,16 @@ import Prologue from '../prologue/Prologue';
 import Chapters from '../chapters/Chapters';
 import ChapterDetails from '../chapters/ChapterDetails';
 import Story from '../story/Story';
+import { completedChapters } from '../../utils/interfaces';
+import { userSelections } from '../../utils/types';
 
-// import chapterData from '../../data/chapterData.json';
-
-interface userSelection {
-  chapter: string,
-  choice: string
-}
-
-interface allUserSelections {
-  [key: string]: userSelection
-}
+// TO DO LIST:
+// Add "Go Back" button to ChapterDetails
 
 const App: React.FC = () => {
   const [userName, setUserName] = useState<string>('');
-  const [userData, setUserData] = useState<allUserSelections>({});
+  const [completed, setCompleted] = useState<completedChapters>({});
+  const [userSelections, setUserSelections] = useState<userSelections>([]);
 
   return (
     <div data-testid="app">
@@ -47,8 +42,9 @@ const App: React.FC = () => {
             exact path="/chapters/:locale"
             render={() =>
               <ChapterDetails
-                userData={userData}
-                setUserData={setUserData}
+                setCompleted={setCompleted}
+                userSelections={userSelections}
+                setUserSelections={setUserSelections}
               />
             }
           />
@@ -56,8 +52,10 @@ const App: React.FC = () => {
             exact path="/story"
             render={() =>
               <Story
-                userData={userData}
-                setUserData={setUserData}
+                completed={completed}
+                setCompleted={setCompleted}
+                userSelections={userSelections}
+                setUserSelections={setUserSelections}
               />
             }
           />

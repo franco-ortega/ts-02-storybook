@@ -3,14 +3,10 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styles from './Chapters.module.css';
 import chapterData from '../../data/chapterData.json';
+import { ChapterInfo } from '../../utils/interfaces';
 
 interface Props {
   userName: string
-}
-
-type ChapterInfo = {
-  title: string,
-  choices: string[]
 }
 
 type ChapterList = ChapterInfo[]

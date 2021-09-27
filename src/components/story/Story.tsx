@@ -2,35 +2,33 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Story.module.css';
 import { useHistory } from 'react-router';
-
-
-interface userSelection {
-  chapter: string,
-  choice: string
-}
-
-interface allUserSelections {
-  [key: string]: userSelection
-}
+import { userSelections } from '../../utils/types';
+import { completedChapters } from '../../utils/interfaces';
 
 interface Props {
-  userData: allUserSelections,
-  setUserData: React.Dispatch<React.SetStateAction<allUserSelections>>
+  completed: completedChapters,
+  setCompleted: React.Dispatch<React.SetStateAction<completedChapters>>,
+  userSelections: userSelections,
+  setUserSelections: React.Dispatch<React.SetStateAction<userSelections>>
 }
 
-const Story: React.FC<Props> = ({ userData, setUserData }) => {
+const Story: React.FC<Props> = ({
+  setCompleted,
+  userSelections,
+  setUserSelections
+}) => {
   const history = useHistory();
-  let userStory = '';
-  // Loop through userData selections and concatenate them
+
+  // Loop through completed selections and concatenate them
   // together to create the story
-  for(const locale in userData) {
-    console.log('Putting this together');
-    const sentence = userData[locale].choice;
-    userStory += `${sentence} `;
-  }
+  const userStory = userSelections.reduce((previous, current, index) => {
+    if(index < userSelections.length - 1) return previous + current + ' ';
+    else return previous + current;
+  }, '');
 
   const onNewStoryClick = () => {
-    setUserData({});
+    setCompleted({});
+    setUserSelections([]);
     history.push('/');
   };
 
@@ -44,8 +42,10 @@ const Story: React.FC<Props> = ({ userData, setUserData }) => {
 };
 
 Story.propTypes = {
-  userData: PropTypes.shape({}).isRequired,
-  setUserData: PropTypes.func.isRequired
+  completed: PropTypes.shape({}).isRequired,
+  setCompleted: PropTypes.func.isRequired,
+  userSelections: PropTypes.array.isRequired,
+  setUserSelections: PropTypes.func.isRequired
 };
 
 export default Story;
