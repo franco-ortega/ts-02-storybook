@@ -1,10 +1,10 @@
-export interface userSelection {
-  chapter: string,
-  choice: string
-}
+// export interface userSelection {
+//   chapter: string,
+//   choice: string
+// }
 
 export interface allUserSelections {
-  [key: string]: userSelection
+  [key: string]: boolean
 }
 
 export interface ChapterInfo {

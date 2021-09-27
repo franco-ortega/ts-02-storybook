@@ -9,6 +9,7 @@ import Chapters from '../chapters/Chapters';
 import ChapterDetails from '../chapters/ChapterDetails';
 import Story from '../story/Story';
 import { allUserSelections } from '../../utils/interfaces';
+import { userSelections } from '../../utils/types';
 
 // TO DO LIST:
 // Add "Go Back" button to ChapterDetails
@@ -16,6 +17,7 @@ import { allUserSelections } from '../../utils/interfaces';
 const App: React.FC = () => {
   const [userName, setUserName] = useState<string>('');
   const [userData, setUserData] = useState<allUserSelections>({});
+  const [userSelections, setUserSelections] = useState<userSelections>([]);
 
   return (
     <div data-testid="app">
@@ -42,6 +44,8 @@ const App: React.FC = () => {
               <ChapterDetails
                 userData={userData}
                 setUserData={setUserData}
+                userSelections={userSelections}
+                setUserSelections={setUserSelections}
               />
             }
           />
@@ -51,6 +55,8 @@ const App: React.FC = () => {
               <Story
                 userData={userData}
                 setUserData={setUserData}
+                userSelections={userSelections}
+                setUserSelections={setUserSelections}
               />
             }
           />
