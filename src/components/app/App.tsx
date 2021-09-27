@@ -8,7 +8,7 @@ import Prologue from '../prologue/Prologue';
 import Chapters from '../chapters/Chapters';
 import ChapterDetails from '../chapters/ChapterDetails';
 import Story from '../story/Story';
-import { allUserSelections } from '../../utils/interfaces';
+import { completedChapters } from '../../utils/interfaces';
 import { userSelections } from '../../utils/types';
 
 // TO DO LIST:
@@ -16,7 +16,7 @@ import { userSelections } from '../../utils/types';
 
 const App: React.FC = () => {
   const [userName, setUserName] = useState<string>('');
-  const [userData, setUserData] = useState<allUserSelections>({});
+  const [completed, setCompleted] = useState<completedChapters>({});
   const [userSelections, setUserSelections] = useState<userSelections>([]);
 
   return (
@@ -42,8 +42,7 @@ const App: React.FC = () => {
             exact path="/chapters/:locale"
             render={() =>
               <ChapterDetails
-                userData={userData}
-                setUserData={setUserData}
+                setCompleted={setCompleted}
                 userSelections={userSelections}
                 setUserSelections={setUserSelections}
               />
@@ -53,8 +52,8 @@ const App: React.FC = () => {
             exact path="/story"
             render={() =>
               <Story
-                userData={userData}
-                setUserData={setUserData}
+                completed={completed}
+                setCompleted={setCompleted}
                 userSelections={userSelections}
                 setUserSelections={setUserSelections}
               />
