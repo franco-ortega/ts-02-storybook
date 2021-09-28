@@ -18,8 +18,14 @@
 .Chapters ul {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(5, 1fr);
   gap: 10vw;
   padding: 0;
+  /* display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10vw; */
 }
 
 .Chapters li {
@@ -27,8 +33,12 @@
   background: hsla(170, 80%, 45%, .9);
   border: thin solid black;
   border-radius: 2vw;
-  width: 30vw;
-  padding: 10vw 1vw;
+  height: 6rem;
+  width: 8rem;
+  /* padding: 5vw 0vw; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   transition: all .5s;
 }
