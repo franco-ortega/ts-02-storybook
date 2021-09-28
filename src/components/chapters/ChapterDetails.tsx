@@ -46,16 +46,17 @@ const ChapterDetails: React.FC<Props> = ({
     // equals the total number of chapters
     if(userSelections.length === totalLands.length - 1) history.push('/story');
     else history.push('/chapters');
-    // if(Object.keys(completed).length === totalLands.length) {
-    //   history.push('/story');
-    // } else history.push('/chapters');
   };
 
+  const uppercaseFirstLetter = (word: string): string => {
+    return word.replace(/^./, firstLetter => firstLetter.toUpperCase());
+  };
+  
   // Get selections for current chapter from data file
   const setting: Location = lands[locale];
 
   // Create header for current chapter
-  const header = setting.title;
+  const header = uppercaseFirstLetter(locale);
 
   // Create choices for current chapter
   const options = setting.choices.map((choice, i) => (

@@ -1,6 +1,5 @@
 {
   "forest": {
-    "title": "Forest",
     "choices": [
       "All the trees.",
       "Beware the bears.",
@@ -9,7 +8,6 @@
     ]
   },
   "mountains": {
-    "title": "Mountains",
     "choices": [
       "Dwarven spirits soar!",
       "Even stone crumbles.",
@@ -18,7 +16,6 @@
       ]
   },
   "swamp": {
-    "title": "Swamp",
     "choices": [
       "Gators be everywhere.",
       "Hide now to thrive later.",
@@ -27,7 +24,6 @@
       ]
   },
   "ocean": {
-    "title": "Ocean",
     "choices": [
       "Many waves til tomorrow.",
       "Night shall pass before you pass.",
@@ -36,7 +32,6 @@
     ]
   },
   "desert": {
-    "title": "Desert",
     "choices": [
       "Many waves til tomorrow.",
       "Night shall pass before you pass.",
@@ -45,7 +40,6 @@
     ]
   },
   "jungle": {
-    "title": "Jungle",
     "choices": [
       "Many waves til tomorrow.",
       "Night shall pass before you pass.",
@@ -54,7 +48,6 @@
     ]
   },
   "tundra": {
-    "title": "Tundra",
     "choices": [
       "Many waves til tomorrow.",
       "Night shall pass before you pass.",
@@ -63,7 +56,6 @@
     ]
   },
   "plains": {
-    "title": "Plains",
     "choices": [
       "Many waves til tomorrow.",
       "Night shall pass before you pass.",
@@ -72,7 +64,6 @@
     ]
   },
   "hills": {
-    "title": "Hills",
     "choices": [
       "Many waves til tomorrow.",
       "Night shall pass before you pass.",
@@ -81,7 +72,6 @@
     ]
   },
   "caves": {
-    "title": "Caves",
     "choices": [
       "Many waves til tomorrow.",
       "Night shall pass before you pass.",

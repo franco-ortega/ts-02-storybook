@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ChapterInfo, completedChapters } from '../../utils/interfaces';
+import {
+  // ChapterInfo, 
+  completedChapters } from '../../utils/interfaces';
 import chapterData from '../../data/chapterData.json';
 import PropTypes from 'prop-types';
 import styles from './Chapters.module.css';
@@ -10,25 +12,30 @@ interface Props {
   completed: completedChapters
 }
 
-type ChapterList = ChapterInfo[]
+// ChapterList is an array of ChapterInfo objects/interfaces
+// type ChapterList = ChapterInfo[]
 
 const Chapters: React.FC<Props> = ({ userName, completed }) => {
-  const locations: ChapterList = Object.values(chapterData);
-
-  const titles = locations.map(location => location.title);
-  console.log(titles);
-  console.log(completed);
-
-  const chapters: JSX.Element[] = titles.map((title: string, i: number) => (
-    (!completed[title.toLowerCase()])
+  // locations is an array of objects; each object contains info of one chapter
+  // const locations: ChapterList = Object.values(chapterData);
+  // titles is an array of the title property from each chapter object
+  // const titles = locations.map(location => location.title);
+  const locations: string[] = Object.keys(chapterData);
+  
+  const uppercaseFirstLetter = (word: string): string => {
+    return word.replace(/^./, firstLetter => firstLetter.toUpperCase());
+  };
+  
+  const chapters: JSX.Element[] = locations.map((title: string, i: number) => (
+    (completed[title])
       ?
-      <Link to={`chapters/${title.toLowerCase()}`} key={i}>
+      <li key={i}>{uppercaseFirstLetter(title)}<br />(completed)</li>
+      :
+      <Link to={`chapters/${title}`} key={i}>
         <li>
-          {title}
+          {uppercaseFirstLetter(title)}
         </li>
       </Link>
-      :
-      <li>{title} was completed.</li>
   ));
 
   return (
@@ -36,6 +43,7 @@ const Chapters: React.FC<Props> = ({ userName, completed }) => {
       <h1>Chapters</h1>
       <p>
         Hello, {userName}. This is where you create your story.
+        Pick a selection from each chapter.
       </p>
       <ul>{chapters}</ul>
     </section>
