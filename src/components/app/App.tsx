@@ -41,7 +41,7 @@ const App: React.FC = () => {
             }
           />
           <Route
-            exact path="/chapters/:locale"
+            exact path="/chapters/:chapter"
             render={() =>
               <ChapterDetails
                 setCompleted={setCompleted}
