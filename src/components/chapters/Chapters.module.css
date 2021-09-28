@@ -50,8 +50,15 @@
   cursor: pointer;
 }
 
+
+
 .Chapters ul > li {
   background: hsl(36, 100%, 90%);
-  /* color: hsl(0, 0%, 0%, 50%); */
-  opacity: 60%;
+  border-color: gray;
+}
+
+.Chapters ul > li:hover {
+  background: hsl(36, 100%, 90%);
+  transform: none;
+  cursor: default;
 }
