@@ -35,6 +35,7 @@ const App: React.FC = () => {
             render={() =>
               <Chapters
                 userName={userName}
+                completed={completed}
               />
             }
           />

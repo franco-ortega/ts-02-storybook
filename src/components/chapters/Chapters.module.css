@@ -1,6 +1,6 @@
 .Chapters {
   background: hsla(100, 50%, 75%, .8);
-  margin: 5vw;
+  /* margin: 5vw; */
   padding: 2vw;
   display: flex;
   flex-direction: column;
@@ -28,7 +28,7 @@
   border: thin solid black;
   border-radius: 2vw;
   width: 30vw;
-  padding: 10vw 0vw;
+  padding: 10vw 1vw;
   text-align: center;
   transition: all .5s;
 }
@@ -40,6 +40,8 @@
   cursor: pointer;
 }
 
-.Completed {
-  opacity: 90%;
+.Chapters ul > li {
+  background: hsl(36, 100%, 90%);
+  /* color: hsl(0, 0%, 0%, 50%); */
+  opacity: 60%;
 }
