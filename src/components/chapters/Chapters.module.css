@@ -52,6 +52,4 @@
 
 .Chapters ul > li {
   background: hsl(36, 100%, 90%);
-  /* color: hsl(0, 0%, 0%, 50%); */
-  opacity: 60%;
 }
