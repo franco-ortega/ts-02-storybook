@@ -4,7 +4,6 @@ export interface ChapterInfo {
 }
 
 export interface Location {
-  title: string;
   choices: string[];
 }
 

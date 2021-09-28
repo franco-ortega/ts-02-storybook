@@ -1,42 +1,48 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { completedChapters } from '../../utils/interfaces';
+import chapterData from '../../data/chapterData.json';
 import PropTypes from 'prop-types';
 import styles from './Chapters.module.css';
-import chapterData from '../../data/chapterData.json';
-import { ChapterInfo } from '../../utils/interfaces';
+import { uppercaseFirstLetter } from '../../utils/utils';
 
 interface Props {
-  userName: string
+  userName: string,
+  completed: completedChapters
 }
 
-type ChapterList = ChapterInfo[]
-
-const Chapters: React.FC<Props> = ({ userName }) => {
-  const locations: ChapterList = Object.values(chapterData);
-
-  const titles = locations.map(location => location.title);
-
-  const chapters: JSX.Element[] = titles.map((title: string, i: number) => (
-    <Link to={`chapters/${title.toLowerCase()}`} key={i}>
-      <li>
-        {title}
-      </li>
-    </Link>
-  ));
+const Chapters: React.FC<Props> = ({ userName, completed }) => {
+  // titles is an array of keys; each key is a chapter title
+  const chapters: string[] = Object.keys(chapterData);
+  
+  const chapterList: JSX.Element[] = chapters.map(
+    (chapter: string, i: number) => (
+      (completed[chapter])
+        ?
+        <li key={i}>{uppercaseFirstLetter(chapter)}<br />(completed)</li>
+        :
+        <Link to={`chapters/${chapter}`} key={i}>
+          <li>
+            {uppercaseFirstLetter(chapter)}
+          </li>
+        </Link>
+    ));
 
   return (
     <section className={styles.Chapters}>
       <h1>Chapters</h1>
       <p>
         Hello, {userName}. This is where you create your story.
+        Pick a selection from each chapter.
       </p>
-      <ul>{chapters}</ul>
+      <ul>{chapterList}</ul>
     </section>
   );
 };
 
 Chapters.propTypes = {
-  userName: PropTypes.string.isRequired
+  userName: PropTypes.string.isRequired,
+  completed: PropTypes.shape({}).isRequired
 };
 
 export default Chapters;

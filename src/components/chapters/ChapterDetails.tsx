@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import lands from '../../data/chapterData.json';
+import chapterData from '../../data/chapterData.json';
 import styles from './ChapterDetails.module.css';
 import {
   completedChapters,
   Location
 } from '../../utils/interfaces';
 import { userSelections } from '../../utils/types';
+import { uppercaseFirstLetter } from '../../utils/utils';
 
 interface Props {
   userSelections: userSelections;
@@ -20,10 +21,10 @@ const ChapterDetails: React.FC<Props> = ({
   setUserSelections,
   setCompleted
 }) => {
-  const { locale } = useParams<{ locale: keyof typeof lands }>();
-  const [selection, setSelection] = useState<string>('');
-  const totalLands = Object.keys(lands);
   const history = useHistory();
+  const { chapter } = useParams<{ chapter: keyof typeof chapterData }>();
+  const [selection, setSelection] = useState<string>('');
+  const allChapters = Object.keys(chapterData);
 
   const onChoiceChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     setSelection(e.target.value);
@@ -36,26 +37,23 @@ const ChapterDetails: React.FC<Props> = ({
     // Add selection to userSelections array
     setUserSelections(prevState => [...prevState, selection]);
 
-    // Add locale to completed object
+    // Add chapter to completed object
     setCompleted(prevState => {
-      prevState[locale] = true;
+      prevState[chapter] = true;
       return prevState;
     });
 
     // Redirect user to Story component when the number of chapters completed
     // equals the total number of chapters
-    if(userSelections.length === totalLands.length - 1) history.push('/story');
+    if(userSelections.length === allChapters.length - 1) history.push('/story');
     else history.push('/chapters');
-    // if(Object.keys(completed).length === totalLands.length) {
-    //   history.push('/story');
-    // } else history.push('/chapters');
   };
-
+  
   // Get selections for current chapter from data file
-  const setting: Location = lands[locale];
+  const setting: Location = chapterData[chapter];
 
   // Create header for current chapter
-  const header = setting.title;
+  const header = uppercaseFirstLetter(chapter);
 
   // Create choices for current chapter
   const options = setting.choices.map((choice, i) => (
