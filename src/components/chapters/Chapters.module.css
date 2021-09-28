@@ -39,3 +39,7 @@
   transform: scale(1.02);
   cursor: pointer;
 }
+
+.Completed {
+  opacity: 90%;
+}

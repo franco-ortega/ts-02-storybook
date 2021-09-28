@@ -17,11 +17,15 @@ const Chapters: React.FC<Props> = ({ userName }) => {
   const titles = locations.map(location => location.title);
 
   const chapters: JSX.Element[] = titles.map((title: string, i: number) => (
-    <Link to={`chapters/${title.toLowerCase()}`} key={i}>
-      <li>
-        {title}
-      </li>
-    </Link>
+    (!title)
+      ?
+      <Link to={`chapters/${title.toLowerCase()}`} key={i}>
+        <li>
+          {title}
+        </li>
+      </Link>
+      :
+      <p>{title} was already completed.</p>
   ));
 
   return (
