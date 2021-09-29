@@ -12,8 +12,6 @@ import { completedChapters } from '../../utils/interfaces';
 import { userSelections } from '../../utils/types';
 
 // TO DO LIST:
-// "Submit" button should not be clickable until a selection has been made
-//// -this goes for Prologue page and ChapterDetails page
 
 const App: React.FC = () => {
   const [userName, setUserName] = useState<string>('');
