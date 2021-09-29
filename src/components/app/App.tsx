@@ -12,7 +12,6 @@ import { completedChapters } from '../../utils/interfaces';
 import { userSelections } from '../../utils/types';
 
 // TO DO LIST:
-// Add "Go Back" button to ChapterDetails
 // "Submit" button should not be clickable until a selection has been made
 //// -this goes for Prologue page and ChapterDetails page
 
