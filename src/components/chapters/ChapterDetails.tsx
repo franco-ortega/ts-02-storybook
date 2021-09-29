@@ -61,6 +61,7 @@ const ChapterDetails: React.FC<Props> = ({
   const options = setting.choices.map((choice, i) => (
     <label key={i} htmlFor={choice}>
       <input
+        required
         id={choice}
         type="radio"
         name="user choice"
