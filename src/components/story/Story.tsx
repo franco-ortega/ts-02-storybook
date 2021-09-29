@@ -29,7 +29,7 @@ const Story: React.FC<Props> = ({
   const onNewStoryClick = () => {
     setCompleted({});
     setUserSelections([]);
-    history.push('/');
+    history.push('/chapters');
   };
 
   return (
