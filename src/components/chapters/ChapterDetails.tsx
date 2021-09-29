@@ -48,6 +48,8 @@ const ChapterDetails: React.FC<Props> = ({
     if(userSelections.length === allChapters.length - 1) history.push('/story');
     else history.push('/chapters');
   };
+
+  const onGoBackClick = () => history.push('/chapters');
   
   // Get selections for current chapter from data file
   const setting: Location = chapterData[chapter];
@@ -77,6 +79,7 @@ const ChapterDetails: React.FC<Props> = ({
         {options}
         <button>Submit</button>
       </form>
+      <button onClick={onGoBackClick}>Go Back</button>
     </main>
   );
 };
