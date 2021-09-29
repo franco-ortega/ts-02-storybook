@@ -27,6 +27,7 @@ const Prologue: React.FC<Props> = ({ setUserName }) => {
       <form onSubmit={onNameSubmit}>
         <label htmlFor="user-name">
           <input
+            required
             type="text"
             id="user-name"
             placeholder="Enter name"
