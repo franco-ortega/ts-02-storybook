@@ -51,10 +51,10 @@ const App: React.FC = () => {
             exact path="/story"
             render={() =>
               <Story
-                completed={completed}
-                setCompleted={setCompleted}
+                setUserName={setUserName}
                 userSelections={userSelections}
                 setUserSelections={setUserSelections}
+                setCompleted={setCompleted}
               />
             }
           />

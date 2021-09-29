@@ -6,16 +6,17 @@ import { userSelections } from '../../utils/types';
 import { completedChapters } from '../../utils/interfaces';
 
 interface Props {
-  completed: completedChapters,
-  setCompleted: React.Dispatch<React.SetStateAction<completedChapters>>,
-  userSelections: userSelections,
-  setUserSelections: React.Dispatch<React.SetStateAction<userSelections>>
+  setUserName: React.Dispatch<React.SetStateAction<string>>;
+  userSelections: userSelections;
+  setUserSelections: React.Dispatch<React.SetStateAction<userSelections>>;
+  setCompleted: React.Dispatch<React.SetStateAction<completedChapters>>;
 }
 
 const Story: React.FC<Props> = ({
-  setCompleted,
+  setUserName,
   userSelections,
-  setUserSelections
+  setUserSelections,
+  setCompleted
 }) => {
   const history = useHistory();
 
@@ -27,9 +28,16 @@ const Story: React.FC<Props> = ({
   }, '');
 
   const onNewStoryClick = () => {
-    setCompleted({});
     setUserSelections([]);
+    setCompleted({});
     history.push('/chapters');
+  };
+  
+  const onNewUserClick = () => {
+    setUserName('');
+    setUserSelections([]);
+    setCompleted({});
+    history.push('/');
   };
 
   return (
@@ -37,15 +45,16 @@ const Story: React.FC<Props> = ({
       <h1>Your story...</h1>
       <p>{userStory}</p>
       <button onClick={onNewStoryClick}>New Story</button>
+      <button onClick={onNewUserClick}>New User</button>
     </main>
   );
 };
 
 Story.propTypes = {
-  completed: PropTypes.shape({}).isRequired,
-  setCompleted: PropTypes.func.isRequired,
+  setUserName: PropTypes.func.isRequired,
   userSelections: PropTypes.array.isRequired,
-  setUserSelections: PropTypes.func.isRequired
+  setUserSelections: PropTypes.func.isRequired,
+  setCompleted: PropTypes.func.isRequired
 };
 
 export default Story;
