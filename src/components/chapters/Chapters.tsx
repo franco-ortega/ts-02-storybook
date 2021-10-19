@@ -1,17 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { completedChapters } from '../../utils/interfaces';
+import { uppercaseFirstLetter } from '../../utils/utils';
 import chapterData from '../../data/chapterData.json';
 import PropTypes from 'prop-types';
 import styles from './Chapters.module.css';
-import { uppercaseFirstLetter } from '../../utils/utils';
 
 interface Props {
   userName: string,
+  userSelections: string[],
   completed: completedChapters
 }
 
-const Chapters: React.FC<Props> = ({ userName, completed }) => {
+const Chapters: React.FC<Props> = ({ userName, userSelections, completed }) => {
   // titles is an array of keys; each key is a chapter title
   const chapters: string[] = Object.keys(chapterData);
   
@@ -35,6 +36,7 @@ const Chapters: React.FC<Props> = ({ userName, completed }) => {
         Hello, {userName}. This is where you create your story.
         Pick a selection from each chapter.
       </p>
+      <p>Last line: {userSelections[userSelections.length - 1]}</p>
       <ul>{chapterList}</ul>
     </section>
   );
@@ -42,6 +44,7 @@ const Chapters: React.FC<Props> = ({ userName, completed }) => {
 
 Chapters.propTypes = {
   userName: PropTypes.string.isRequired,
+  userSelections: PropTypes.array.isRequired,
   completed: PropTypes.shape({}).isRequired
 };
 

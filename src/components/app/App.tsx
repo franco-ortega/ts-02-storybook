@@ -33,6 +33,7 @@ const App: React.FC = () => {
             render={() =>
               <Chapters
                 userName={userName}
+                userSelections={userSelections}
                 completed={completed}
               />
             }
