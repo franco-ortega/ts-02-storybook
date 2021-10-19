@@ -13,7 +13,10 @@ interface Props {
 }
 
 const Chapters: React.FC<Props> = ({ userName, userSelections, completed }) => {
-  // titles is an array of keys; each key is a chapter title
+  // the selection that the user most recently chose:
+  const lastLine = userSelections[userSelections.length - 1];
+
+  // chapters is an array of keys; each key is a chapter title
   const chapters: string[] = Object.keys(chapterData);
   
   const chapterList: JSX.Element[] = chapters.map(
@@ -36,7 +39,7 @@ const Chapters: React.FC<Props> = ({ userName, userSelections, completed }) => {
         Hello, {userName}. This is where you create your story.
         Pick a selection from each chapter.
       </p>
-      <p>Last line: {userSelections[userSelections.length - 1]}</p>
+      {lastLine && <p>Last line: {lastLine}</p>}
       <ul>{chapterList}</ul>
     </section>
   );
