@@ -1,82 +1,82 @@
 {
   "forest": {
     "choices": [
-      "All the trees.",
-      "Beware the bears.",
-      "Call your wild.",
-      "Just out of reach."
+      "Forest 1: All the trees.",
+      "Forest 2: Beware the bears.",
+      "Forest 3: Call your wild.",
+      "Forest 4: Just out of reach."
     ]
   },
   "mountains": {
     "choices": [
-      "Dwarven spirits soar!",
-      "Even stone crumbles.",
-      "Fly or fall?",
-      "Kinship above all."
+      "Mountains 1: Dwarven spirits soar!",
+      "Mountains 2: Even stone crumbles.",
+      "Mountains 3: Fly or fall?",
+      "Mountains 4: Kinship above all."
       ]
   },
   "swamp": {
     "choices": [
-      "Gators be everywhere.",
-      "Hide now to thrive later.",
-      "Ill spirits cling to ye.",
-      "Lost in the fog."
+      "Swamp 1: Gators be everywhere.",
+      "Swamp 2: Hide now to thrive later.",
+      "Swamp 3: Ill spirits cling to ye.",
+      "Swamp 4: Lost in the fog."
       ]
   },
   "ocean": {
     "choices": [
-      "Many waves til tomorrow.",
-      "Night shall pass before you pass.",
-      "Open skies spill onto the shore.",
-      "Parry the blade but not the brine."
+      "Ocean 1: Many waves til tomorrow.",
+      "Ocean 2: Night shall pass before you pass.",
+      "Ocean 3: Open skies spill onto the shore.",
+      "Ocean 4: Parry the blade but not the brine."
     ]
   },
   "desert": {
     "choices": [
-      "Many waves til tomorrow.",
-      "Night shall pass before you pass.",
-      "Open skies spill onto the shore.",
-      "Parry the blade but not the brine."
+      "Desert #1",
+      "Desert #2",
+      "Desert #3",
+      "Desert #4"
     ]
   },
   "jungle": {
     "choices": [
-      "Many waves til tomorrow.",
-      "Night shall pass before you pass.",
-      "Open skies spill onto the shore.",
-      "Parry the blade but not the brine."
+      "Jungle #1",
+      "Jungle #2",
+      "Jungle #3",
+      "Jungle #4"
     ]
   },
   "tundra": {
     "choices": [
-      "Many waves til tomorrow.",
-      "Night shall pass before you pass.",
-      "Open skies spill onto the shore.",
-      "Parry the blade but not the brine."
+      "Tundra #1",
+      "Tundra #2",
+      "Tundra #3",
+      "Tundra #4"
     ]
   },
   "plains": {
     "choices": [
-      "Many waves til tomorrow.",
-      "Night shall pass before you pass.",
-      "Open skies spill onto the shore.",
-      "Parry the blade but not the brine."
+      "Plains #1",
+      "Plains #2",
+      "Plains #3",
+      "Plains #4"
     ]
   },
   "hills": {
     "choices": [
-      "Many waves til tomorrow.",
-      "Night shall pass before you pass.",
-      "Open skies spill onto the shore.",
-      "Parry the blade but not the brine."
+      "Hills #1",
+      "Hills #2",
+      "Hills #3",
+      "Hills #4"
     ]
   },
   "caves": {
     "choices": [
-      "Many waves til tomorrow.",
-      "Night shall pass before you pass.",
-      "Open skies spill onto the shore.",
-      "Parry the blade but not the brine."
+      "Caves #1",
+      "Caves #2",
+      "Caves #3",
+      "Caves #4"
     ]
   }
 }
