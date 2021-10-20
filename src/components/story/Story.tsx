@@ -2,13 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Story.module.css';
 import { useHistory } from 'react-router';
-import { userSelections } from '../../utils/types';
+import { Selections } from '../../utils/types';
 import { completedChapters } from '../../utils/interfaces';
 
 interface Props {
   setUserName: React.Dispatch<React.SetStateAction<string>>;
-  userSelections: userSelections;
-  setUserSelections: React.Dispatch<React.SetStateAction<userSelections>>;
+  userSelections: Selections;
+  setUserSelections: React.Dispatch<React.SetStateAction<Selections>>;
   setCompleted: React.Dispatch<React.SetStateAction<completedChapters>>;
 }
 

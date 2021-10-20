@@ -9,12 +9,12 @@ import Chapters from '../chapters/Chapters';
 import ChapterDetails from '../chapters/ChapterDetails';
 import Story from '../story/Story';
 import { completedChapters } from '../../utils/interfaces';
-import { userSelections } from '../../utils/types';
+import { Selections } from '../../utils/types';
 
 const App: React.FC = () => {
   const [userName, setUserName] = useState<string>('');
   const [completed, setCompleted] = useState<completedChapters>({});
-  const [userSelections, setUserSelections] = useState<userSelections>([]);
+  const [userSelections, setUserSelections] = useState<Selections>([]);
 
   return (
     <div data-testid="app">

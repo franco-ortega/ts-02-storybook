@@ -7,11 +7,11 @@ import {
   completedChapters,
   Location
 } from '../../utils/interfaces';
-import { userSelections } from '../../utils/types';
+import { Selections } from '../../utils/types';
 import { uppercaseFirstLetter } from '../../utils/utils';
 
 interface Props {
-  setUserSelections: React.Dispatch<React.SetStateAction<userSelections>>;
+  setUserSelections: React.Dispatch<React.SetStateAction<Selections>>;
   setCompleted: React.Dispatch<React.SetStateAction<completedChapters>>;
 }
 

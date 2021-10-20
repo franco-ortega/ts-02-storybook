@@ -1,1 +1,1 @@
-export type userSelections = string[];
+export type Selections = string[];
