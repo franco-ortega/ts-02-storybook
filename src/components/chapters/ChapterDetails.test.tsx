@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { JSXElementConstructor, ReactElement } from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
 import ChapterDetails from './ChapterDetails';
-import { MemoryRouter } from 'react-router';
+import { MemoryRouter } from 'react-router-dom';
+
+// import chapterData from '../../data/chapterData.json';
+
+// const renderWithRouter = (ui: ReactElement<any, string | JSXElementConstructor<any>>, {route = '/chapters/forest'} = {}) => {
+//   window.history.pushState({}, 'Test page', route)
+
+//   return render(ui, {wrapper: MemoryRouter})
+// }
 
 describe('tests for ChapterDetails component', () => {
   test('render ChapterDetails component on screen', () => {

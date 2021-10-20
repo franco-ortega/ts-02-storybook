@@ -11,8 +11,6 @@ import Story from '../story/Story';
 import { completedChapters } from '../../utils/interfaces';
 import { userSelections } from '../../utils/types';
 
-// TO DO LIST:
-
 const App: React.FC = () => {
   const [userName, setUserName] = useState<string>('');
   const [completed, setCompleted] = useState<completedChapters>({});
@@ -43,7 +41,7 @@ const App: React.FC = () => {
             render={() =>
               <ChapterDetails
                 setCompleted={setCompleted}
-                userSelections={userSelections}
+                // userSelections={userSelections}
                 setUserSelections={setUserSelections}
               />
             }
