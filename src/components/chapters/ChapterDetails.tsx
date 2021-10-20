@@ -9,6 +9,7 @@ import {
 } from '../../utils/interfaces';
 import { Selections } from '../../utils/types';
 import { uppercaseFirstLetter } from '../../utils/utils';
+import { Endpoints } from '../../utils/enums';
 
 interface Props {
   setUserSelections: React.Dispatch<React.SetStateAction<Selections>>;
@@ -44,8 +45,9 @@ const ChapterDetails: React.FC<Props> = ({
 
       // Redirect user to Story component when the number of chapters completed
       // is equal the total number of chapters
-      if(updatedState.length === allChapters.length) history.push('/story');
-      else history.push('/chapters');
+      // eslint-disable-next-line max-len
+      if(updatedState.length === allChapters.length) history.push(`${Endpoints.Story}`);
+      else history.push(`${Endpoints.Chapters}`);
 
       return updatedState;
     });

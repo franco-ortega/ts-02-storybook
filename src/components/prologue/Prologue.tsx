@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useHistory } from 'react-router';
 import styles from './Prologue.module.css';
+import { Endpoints } from '../../utils/enums';
 
 interface Props {
   setUserName: React.Dispatch<React.SetStateAction<string>>;
@@ -13,7 +14,7 @@ const Prologue: React.FC<Props> = ({ setUserName }) => {
   // eslint-disable-next-line max-len
   const onNameSubmit: React.FormEventHandler = (e: React.FormEvent<HTMLInputElement>): void => {
     e.preventDefault();
-    history.push('/chapters');
+    history.push(`${Endpoints.Chapters}`);
   };
 
   return (

@@ -4,6 +4,7 @@ import styles from './Story.module.css';
 import { useHistory } from 'react-router';
 import { Selections } from '../../utils/types';
 import { completedChapters } from '../../utils/interfaces';
+import { Endpoints } from '../../utils/enums';
 
 interface Props {
   setUserName: React.Dispatch<React.SetStateAction<string>>;
@@ -30,14 +31,14 @@ const Story: React.FC<Props> = ({
   const onNewStoryClick = () => {
     setUserSelections([]);
     setCompleted({});
-    history.push('/chapters');
+    history.push(`${Endpoints.Chapters}`);
   };
   
   const onNewUserClick = () => {
     setUserName('');
     setUserSelections([]);
     setCompleted({});
-    history.push('/');
+    history.push(`${Endpoints.Prologue}`);
   };
 
   return (

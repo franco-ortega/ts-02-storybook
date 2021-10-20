@@ -5,6 +5,7 @@ import { uppercaseFirstLetter } from '../../utils/utils';
 import chapterData from '../../data/chapterData.json';
 import PropTypes from 'prop-types';
 import styles from './Chapters.module.css';
+import { Endpoints } from '../../utils/enums';
 
 interface Props {
   userName: string,
@@ -21,11 +22,12 @@ const Chapters: React.FC<Props> = ({ userName, userSelections, completed }) => {
   
   const chapterList: JSX.Element[] = chapters.map(
     (chapter: string, i: number) => (
+      // incomplete chapters are displayed with link
       (completed[chapter])
         ?
         <li key={i}>{uppercaseFirstLetter(chapter)}<br />(completed)</li>
         :
-        <Link to={`chapters/${chapter}`} key={i}>
+        <Link to={`${Endpoints.Chapters}/${chapter}`} key={i}>
           <li>
             {uppercaseFirstLetter(chapter)}
           </li>
