@@ -8,7 +8,12 @@ describe('tests for Story component', () => {
   test('renders Story component', () => {
     render(
       <MemoryRouter>
-        <Story userName="Franco" />
+        <Story
+          setUserName={() => {}}
+          userSelections={['test one', 'test two', 'test three']}
+          setUserSelections={() => {}}
+          setCompleted={() => {}}
+        />
       </MemoryRouter>
     );
 

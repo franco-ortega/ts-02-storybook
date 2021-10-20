@@ -8,7 +8,11 @@ describe('tests for Chapters component', () => {
   test('renders Chapters component', () => {
     render(
       <MemoryRouter>
-        <Chapters userName="Franco" />
+        <Chapters
+          userName="Franco"
+          userSelections={['test one', 'test two', 'test three']}
+          completed={{}}
+        />
       </MemoryRouter>
     );
 
