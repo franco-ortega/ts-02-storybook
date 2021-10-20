@@ -36,7 +36,6 @@ const Prologue: React.FC<Props> = ({ setUserName }) => {
         </label>
         <button>Submit</button>
       </form>
-      
     </section>
   );
 };
